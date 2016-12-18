@@ -1,0 +1,10 @@
+{
+  "name": "Felix3D",
+  "version": "0.0.1",
+  "author": "Ronald Jaramillo",
+  "description": "Gait for a 3D printed quadruped robot",
+  "dependencies": {
+    "johnny-five": "^0.10.6"
+  },
+  "devDependencies": {}
+}
