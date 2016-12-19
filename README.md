@@ -1,10 +1,5 @@
-# Felix3D
-Control a 3D printed quadruped robot with NodeJS and Johnny-Five
-To learn more about this project visit http://www.burningservos.com
-
-
 #Felix3D - a 3D Printable Quadruped Nodebot
--------------------------------------------
+
 <img src="https://github.com/Traverso/Felix3D/blob/master/felix_and_daisy.JPG?raw=true">
 
 Felix is a 3D printed quadruped robot, that you can control with Javascript using NodeJS and 
