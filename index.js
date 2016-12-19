@@ -5,27 +5,34 @@ var board = new five.Board();
 var felix = null;
 
 var config = {
-  granularity:3,
-  speed:40,
-  geometry:{ femur:44, tibia:74, height:110, step_height:10, step_width:26 },
-  gait: [ //expected order FR, FL, BR, BL 
-          [1,2,3,4],
-          [2,3,4,1],
-          [3,4,1,2],
-          [4,1,2,3]
-        ],
+  granularity:4,
+  speed:30,
+  geometry:{ femur:44, tibia:74, height:100, step_height:15, step_width:26 },
+  gaits:{'deer_creep':[ //expected order FR, FL, BR, BL 
+                        [4,2,3,1],
+                        [1,3,4,2],
+                        [2,4,1,3],
+                        [3,1,2,4]
+                      ],
+          'cat_creep':[
+                        [4,1,2,3],
+                        [1,2,3,4],
+                        [2,3,4,1],
+                        [3,4,1,2],
+                      ]
+        },
   legs:[  //expected order FR, FL, BR, BL
                       {
                          id:'FR',
                          label:'Front right',
-                         origin:{x:10,y:0},
+                         origin:{x:8,y:0},
                          hip:{ pin:0, offset:2, invert:false },
                          knee:{ pin:1, offset:4, invert:false }
                       },
                       {
                          id:'FL',
                          label:'Front left',
-                         origin:{x:15,y:0},
+                         origin:{x:18,y:0},
                          hip:{ pin:2, offset:3, invert:true },
                          knee:{ pin:3, offset:-4, invert:true }
                       },
@@ -38,7 +45,7 @@ var config = {
                       },
                       {
                          id:'BL',
-                         origin:{x:0,y:0},
+                         origin:{x:-2,y:0},
                          label:'Back left',
                          hip:{ pin:6, offset:-3, invert:false },
                          knee:{ pin:7, offset:-4, invert:false }

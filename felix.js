@@ -35,7 +35,7 @@ Felix.prototype.forward = function(){
     return;
   }
 
-  var c = this._genwalk();
+  var c = this._genwalk('deer_creep');
   c.push({cmd:'loop',count:-1});
   this.schedule = c;
   this.cycle_idx = 0;
@@ -152,10 +152,10 @@ Felix.prototype._runSchedule = function(){
 * @param orientation string (straight|right|left)
 * @return frames array [{cmd:pose,angles:[{hip:int,knee:int}..]}..]
 **********************************************************/
-Felix.prototype._genwalk = function(orientation){
+Felix.prototype._genwalk = function(gait,orientation){
     var frames = [];
 
-    var gait = this.config.gait;
+    var gait = this.config.gaits[gait];
     for(var i = 0; i < gait.length; i++){
       frames.push(this._genPoseFrame(gait[i]));
 
@@ -358,6 +358,7 @@ Felix.prototype._legPositionByAngles = function(id,angles){
 **********************************************************/
 Felix.prototype._legsPositionByAngles = function(angles){
   for(var i = 0; i < angles.length;i++){
+    //if(this.legs[i].id != 'FL') continue;
     var hip = angles[i].hip + this.legs[i].hip.offset;
     var knee = angles[i].knee + this.legs[i].knee.offset;
     this.legs[i].hip.servo.to( hip );
