@@ -7,7 +7,7 @@ var felix = null;
 var config = {
   granularity:4,
   speed:30,
-  geometry:{ femur:44, tibia:74, height:100, step_height:15, step_width:26 },
+  geometry:{ femur:44, tibia:74, height:110, step_height:15, step_width:26 },
   gaits:{'deer_creep':[ //expected order FR, FL, BR, BL 
                         [4,2,3,1],
                         [1,3,4,2],
